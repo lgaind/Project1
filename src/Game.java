@@ -1,12 +1,12 @@
 /**
  * Created by Laurenz Gaind on 09.10.2015.
  */
+import java.awt.*;
 import java.awt.event.ActionListener;
-import java.awt.MouseInfo;
 import java.awt.event.ActionEvent;
 import javax.swing.*;
 
-public class Project1 {
+public class Game {
     static void startgame(String name) {
 
         //Create and Start Thread
@@ -24,6 +24,8 @@ public class Project1 {
                 //Frame
                 frame.setSize(800, 600);
                 frame.add(panel);
+                frame.setUndecorated(true);
+                frame.setLocation(50, 50);
 
                 //Panel
                 panel.add(button);
@@ -32,7 +34,8 @@ public class Project1 {
                 frame.setVisible(true);
 
                 //Button
-                button.setBounds(300, 200, 200, 200);
+                int mass = 50;
+                button.setBounds(200, 200, mass, mass);
                 button.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
@@ -43,7 +46,7 @@ public class Project1 {
                 //Mouse Control
                 int i = 1;
                 while(i == 1) {
-                    if(MouseInfo.getPointerInfo().getLocation().x > button.getX() + 200) {
+                    if(MouseInfo.getPointerInfo().getLocation().x > button.getX() + mass + 50) {
                         button.setLocation(button.getX() + 1, button.getY());
                         try {
                             Thread.sleep(10);
@@ -51,7 +54,7 @@ public class Project1 {
                             e.printStackTrace();
                         }
                     }
-                    if(MouseInfo.getPointerInfo().getLocation().y > button.getY() + 240) {
+                    if(MouseInfo.getPointerInfo().getLocation().y > button.getY() + mass + 50) {
                         button.setLocation(button.getX(), button.getY() + 1);
                         try {
                             Thread.sleep(10);
@@ -59,7 +62,7 @@ public class Project1 {
                             e.printStackTrace();
                         }
                     }
-                    if(MouseInfo.getPointerInfo().getLocation().x < button.getX() + 10) {
+                    if(MouseInfo.getPointerInfo().getLocation().x < button.getX() + 50) {
                         button.setLocation(button.getX() - 1, button.getY());
                         try {
                             Thread.sleep(10);
@@ -67,7 +70,7 @@ public class Project1 {
                             e.printStackTrace();
                         }
                     }
-                    if(MouseInfo.getPointerInfo().getLocation().y < button.getY() + 60) {
+                    if(MouseInfo.getPointerInfo().getLocation().y < button.getY() + 50) {
                         button.setLocation(button.getX(), button.getY() - 1);
                         try {
                             Thread.sleep(10);

@@ -23,6 +23,7 @@ public class Menu {
         //Frame
         menu.setSize(800, 600);
         menu.add(menupanel);
+        menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //Panel
         menupanel.add(namefield);
@@ -39,8 +40,8 @@ public class Menu {
         startbutton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Project1 p1 = new Project1();
-                p1.startgame(namefield.getText());
+                Game game = new Game();
+                game.startgame(namefield.getText());
             }
         });
 
