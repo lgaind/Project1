@@ -8,8 +8,11 @@ import java.awt.event.ActionListener;
 public class Menu {
     public static void main(String[] args){
 
+        //Version
+        String version = "0.2.2";
+
         //Create Frame
-        JFrame menu = new JFrame("Project1");
+        JFrame menu = new JFrame("Project1 " + version);
 
         //Create Panel
         JLayeredPane menupanel = new JLayeredPane();
